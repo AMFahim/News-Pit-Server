@@ -26,6 +26,13 @@ client.connect(err => {
     })
   })
 
+  app.get('/news', (req, res) => {
+    newsCollection.find()
+    .toArray((err, news) => {
+      res.send(news)
+    })
+  })
+
 
 
 })
